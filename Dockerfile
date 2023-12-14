@@ -1,2 +1,1 @@
-FROM maven:latest
-FROM tomcat:latest
+FROM tomcat:9.0-alpine
