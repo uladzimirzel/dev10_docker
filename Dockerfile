@@ -9,4 +9,4 @@ ENV TFOLDER=/usr/app/tfolder
 RUN mkdir -p $TFOLDER
 ENV COPY_FOL=/usr/app/boxfuse-sample-java-war-hello/target/hello-1.0
 WORKDIR $COPY_FOL
-COPY $COPY_FOL $TFOLDER
+COPY . $TFOLDER
