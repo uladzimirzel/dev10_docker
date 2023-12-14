@@ -1,5 +1,5 @@
-FROM tomcat:9.0-alpine
-FROM maven:latest
-WORKDIR /etc/test
-RUN apt-get update && apt-get install -y git
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello /etc/test
+FROM maven:3.6.1-jdk-11 as maven_builder
+ENV HOME=/usr/app
+RUN mkdir -p $HOME
+WORKDIR $HOME
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
