@@ -9,5 +9,4 @@ RUN mvn clean package
 ENV FILE=/boxfuse-sample-java-war-hello/target/hello-1.0
 FROM tomcat:9.0-jre8-alpine
 ENV TOMCAT=/usr/local/tomcat/webapps
-WORKDIR $FILE
 COPY $FILE $TOMCAT
