@@ -7,6 +7,12 @@ ENV REP=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $REP
 RUN mvn clean package
 ENV FILE=/boxfuse-sample-java-war-hello/target/hello-1.0
-FROM tomcat:9.0-jre8-alpine
-ENV TOMCAT=/usr/local/tomcat/webapps
-CMD ["catalina.sh" "run"]
+
+FROM eclipse-temurin:21-jdk-jammy
+ENV CATALINA_HOME /usr/local/tomcat
+ENV PATH $CATALINA_HOME/bin:$PATH
+RUN mkdir -p "$CATALINA_HOME"
+WORKDIR $CATALINA_HOME
+EXPOSE 8080
+ENTRYPOINT []
+CMD ["catalina.sh", "run"]
