@@ -1,10 +1,9 @@
+FROM maven:3.6.1-jdk-11 as maven_builder
 FROM tomcat:9.0.84-jdk11-temurin-jammy
 CMD ["catalina.sh", "run"]
 ENV MV_FILE=/usr/local/tomcat/
-#WORKDIR $MV_FILE
-#RUN cp -r webapps.dist/* webapps
-
-FROM maven:3.6.1-jdk-11 as maven_builder
+WORKDIR $MV_FILE
+RUN cp -r webapps.dist/* webapps
 ENV GIT_REP=/usr/app
 RUN mkdir -p $GIT_REP
 WORKDIR $GIT_REP
@@ -12,7 +11,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 ENV RUN_MVN=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $RUN_MVN
 RUN mvn clean package
-WORKDIR $MV_FILE
-RUN cp -r webapps.dist/* webapps
-WORKDIR $RUN_MVN
-RUN cp -r target/* ~/usr/local/tomcat
+RUN cp -r target/hello-1.0 ~/
