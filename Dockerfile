@@ -8,6 +8,6 @@ RUN mkdir -p $HOME
 WORKDIR $HOME
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ENV REP=/usr/app/boxfuse-sample-java-war-hello
-WORKDIR $REP
-RUN mvn clean package
-RUN cp -r /usr/app/boxfuse-sample-java-war-hello/src/main/webapp ~/usr/local/tomcat/webapps
+#WORKDIR $REP
+#RUN mvn clean package
+#RUN cp -r /usr/app/boxfuse-sample-java-war-hello/src/main/webapp ~/usr/local/tomcat/webapps
