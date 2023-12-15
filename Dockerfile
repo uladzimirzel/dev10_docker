@@ -7,7 +7,7 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 ENV RUN_MVN=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $RUN_MVN
 RUN mvn clean package
-RUN cp -R ~/usr/app/boxfuse-sample-java-war-hello/target/hello-1.0 ~/
+RUN cp -R ~/usr/app/boxfuse-sample-java-war-hello/target/hello-1.0/* ~/
 
 
 FROM tomcat:9.0.84-jdk11-temurin-jammy
