@@ -1,10 +1,10 @@
 FROM maven:3.6.1-jdk-11 as maven_builder
-ENV GIT_REP=/usr/app
-RUN mkdir -p $GIT_REP
-WORKDIR $GIT_REP
+ENV HOME=/usr/app
+RUN mkdir -p $HOME
+WORKDIR $HOME
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
-ENV RUN_MVN=/usr/app/boxfuse-sample-java-war-hello
-WORKDIR $RUN_MVN
+ENV REP=/usr/app/boxfuse-sample-java-war-hello
+WORKDIR $REP
 RUN mvn clean package
 #RUN mv $RUN_MVN/target/hello-1.0/ ~/
 FROM tomcat:9.0.84-jdk11-temurin-jammy
