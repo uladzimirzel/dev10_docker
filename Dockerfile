@@ -2,7 +2,7 @@ FROM maven:3.9.6-eclipse-temurin-11 AS build
 ENV HOME=/usr/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ENV REP=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $REP
 RUN mvn clean package
