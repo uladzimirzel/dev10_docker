@@ -10,8 +10,8 @@ RUN mvn clean package
 RUN cp -r ~/usr/app/boxfuse-sample-java-war-hello/target/hello-1.0 ~/
 
 
-#FROM tomcat:9.0.84-jdk11-temurin-jammy
-#CMD ["catalina.sh", "run"]
+FROM tomcat:9.0.84-jdk11-temurin-jammy
+CMD ["catalina.sh", "run"]
 #ENV MV_FILE=/usr/local/tomcat/
 #WORKDIR $MV_FILE
 #RUN cp -r webapps.dist/* webapps
