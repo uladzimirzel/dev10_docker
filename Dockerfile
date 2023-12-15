@@ -1,3 +1,2 @@
-FROM openjdk:11
-FROM tomcat:9.0-alpine
-CMD [ "docker run -it --rm -p 8080:8080 tomcat:9.0-alpine" ]
+FROM tomcat:9.0.84-jdk11-temurin-jammy
+CMD ["catalina.sh", "run"]
