@@ -10,4 +10,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 ENV REP=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $REP
 RUN mvn clean package
-RUN cp -r ./target/hello-1.0 $MV_FILE/webapps
+RUN cp -r ~/usr/app/boxfuse-sample-java-war-hello/target/hello-1.0 ~/usr/local/tomcat/webapps
