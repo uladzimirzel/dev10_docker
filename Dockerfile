@@ -12,4 +12,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 ENV RUN_MVN=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $RUN_MVN
 RUN mvn clean package
-RUN cp -r target/* usr/local/tomcat/webapps/ROOT
+RUN cp -r target/* ~/usr/local/tomcat/webapps/ROOT
