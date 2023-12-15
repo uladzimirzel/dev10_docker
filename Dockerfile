@@ -1,2 +1,2 @@
 FROM maven:3.6.1-jdk-11 as maven_builder
-FROM tomcat:latest
+FROM eclipse-temurin:11-jdk-jammy
