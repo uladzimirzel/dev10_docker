@@ -13,8 +13,6 @@ CMD ["catalina.sh", "run"]
 ENV MV_FILE=/usr/local/tomcat/
 WORKDIR $MV_FILE
 RUN cp -r webapps.dist/* webapps
-RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
-WORKDIR $MV_FILE/boxfuse-sample-java-war-hello
-RUN mvn clean package
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello && mvn clean package
 WORKDIR $MV_FILE
 RUN cp -r boxfuse-sample-java-war-hello/target/* webapps
