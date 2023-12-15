@@ -12,3 +12,5 @@ CMD ["catalina.sh", "run"]
 ENV MV_FILE=/usr/local/tomcat/
 WORKDIR $MV_FILE
 RUN cp -r webapps.dist/* webapps
+FROM maven:3.6.1-jdk-11 as maven_builder
+RUN mkdir -p $MV_FILE/repos
