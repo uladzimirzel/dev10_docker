@@ -8,4 +8,6 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
 ENV BUILD_REP=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $BUILD_REP
 RUN mvn clean package
-RUN boxfuse run target/hello-1.0.war
+ENV COMPILE_WAR=/usr/app/boxfuse-sample-java-war-hello/target
+WORKDIR $COMPILE_WAR
+RUN boxfuse run hello-1.0.war
