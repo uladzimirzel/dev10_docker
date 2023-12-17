@@ -10,4 +10,4 @@ WORKDIR $BUILD_REP
 RUN mvn clean package
 ENV COMPILE_WAR=/usr/app/boxfuse-sample-java-war-hello/target
 WORKDIR $COMPILE_WAR
-RUN boxfuse run hello-1.0.war
+RUN run hello-1.0.war
