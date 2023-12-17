@@ -10,5 +10,5 @@ WORKDIR $BUILD_REP
 RUN mvn clean package
 ENV COMPILE_WAR=/usr/local/tomcat/webapps
 RUN cp -r target/hello-1.0.war /usr/local/tomcat/webapps
-WORKDIR $COMPILE_WAR
-RUN boxfuse run target/hello-1.0.war
+#WORKDIR $COMPILE_WAR
+#RUN boxfuse run target/hello-1.0.war
