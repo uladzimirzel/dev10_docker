@@ -5,5 +5,5 @@ RUN apt install git -y
 ENV CLONE_REP=/usr/app/boxfuse-sample-java-war-hello
 WORKDIR $CLONE_REP
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello
-RUN mvn package
+RUN RUN mvn clean package
 RUN boxfuse run target/hello-1.0.war
